@@ -1,4 +1,4 @@
-This is the diary everybody which to have.
+This is the diary everybody wish to have.
 
 
 The layout, designs, features are yet to come
