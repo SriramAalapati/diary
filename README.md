@@ -1,4 +1,4 @@
-This is the diary everybody wish to have.
+This is the diary everybody wish to have.Share your feeling/thoughts/things and much more with whom you think they deserve 
 
 
 The layout, designs, features are yet to come
