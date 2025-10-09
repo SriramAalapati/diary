@@ -20,13 +20,13 @@ export const links = [
         icon: "fa-solid fa-calendar-day" // Planning ahead
     },
     {
-        link: "/mood-tracker",
-        text: "Mood Tracker",
+        link: "/job-tracker",
+        text: "Job Tracker",
         icon: "fa-solid fa-face-smile-beam" // Emotional log
     },
     {
-        link: "/reflections",
-        text: "Reflections",
+        link: "/study",
+        text: "Study",
         icon: "fa-solid fa-pen-nib" // End-of-day or weekly reflections
     },
     {
@@ -50,8 +50,8 @@ export const links = [
         icon: "fa-solid fa-sticky-note" // Freestyle notes or journaling
     },
     {
-        link: "/archive",
-        text: "Archive",
+        link: "/Loans",
+        text: "Loans",
         icon: "fa-solid fa-box-archive" // Saved logs and past entries
     },
     {
