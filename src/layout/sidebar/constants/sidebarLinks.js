@@ -1,6 +1,6 @@
 export const links = [
     {
-        link: "/dashboard",
+        link: "/",
         text: "Dashboard",
         icon: "fa-solid fa-house" // Central hub
     },
@@ -40,8 +40,8 @@ export const links = [
         icon: "fa-solid fa-heart-pulse" // Track water, sleep, exercise
     },
     {
-        link: "/inspiration",
-        text: "Inspiration",
+        link: "/tasks",
+        text: "Tasks",
         icon: "fa-solid fa-lightbulb" // Store quotes, ideas, and resources
     },
     {
@@ -50,7 +50,7 @@ export const links = [
         icon: "fa-solid fa-sticky-note" // Freestyle notes or journaling
     },
     {
-        link: "/Loans",
+        link: "/loans",
         text: "Loans",
         icon: "fa-solid fa-box-archive" // Saved logs and past entries
     },
