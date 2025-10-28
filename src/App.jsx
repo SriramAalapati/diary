@@ -12,8 +12,8 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Routes>
+      <Router basename='/diary'>
+        <Routes >
           <Route path="/" element={<AuthPages mode='login'/>}/>
           <Route path="/login" element={<AuthPages mode='login'/>}/>
           <Route path="/register" element={<AuthPages mode='register'/>}/>
