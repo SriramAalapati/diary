@@ -1,4 +1,5 @@
 const BASE_URL = "http://localhost:3000";
+const PRODUCTION_URL = 'https://dairy-backend-gamma.vercel.app';
 
 async function apiCaller(
   path,
@@ -21,7 +22,7 @@ async function apiCaller(
 
   try {
 
-    const response = await fetch(`${BASE_URL}${path}`, options);
+    const response = await fetch(`${PRODUCTION_URL}${path}`, options);
     const result = await response.json();
     if (!response.ok) {
       throw new Error(result?.message || "API Error");
