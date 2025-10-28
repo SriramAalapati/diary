@@ -9,7 +9,6 @@ async function apiCaller(
   const isFormData = body instanceof FormData;
 
   const headers = {
-    authorization: `Bearer 0000`,
     ...(isFormData ? {} : { "content-type": "application/json" }),
     ...customHeaders,
   };
@@ -17,7 +16,7 @@ async function apiCaller(
     method,
     headers,
     ...(body && { body: isFormData ? body : JSON.stringify(body) }),
-    Credentials: "include",
+    credentials: "include",
   };
 
   try {

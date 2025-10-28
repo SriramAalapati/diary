@@ -1,17 +1,15 @@
-import React, { Children, createContext, useContext, useState } from "react";
+import React, {  createContext, useContext, useEffect, useMemo, useState } from "react";
 import apiCaller from "/src/utils/apiCaller";
-
 const UserContext = createContext();
 const UserProvider = ({children}) => {
   const [user, setUser] = useState(null);
-  const [loading,setLoading] = useState(false)
+  const [loading,setLoading] = useState(true)
 
   async function fetchUser() {
-    setLoading(true)
     try {
-      const response = await apiCaller("/auth/verifyToken", "POST");
+      const response = await apiCaller("/auth/verifyToken");
       if (response.status == "Success") {
-        setUser(response.data);
+        setUser(response?.data);
       }
     } catch (error) {
       console.log(error);
@@ -20,8 +18,12 @@ const UserProvider = ({children}) => {
       setLoading(false)
     }
   }
-
-  return <UserContext.Provider value={{user,setUser}}>
+  useEffect(()=>{
+    fetchUser()
+  },[])
+  console.log("UserContext rerendering")
+  const value = useMemo(()=>({user,loading,setUser}),[user,loading])
+  return <UserContext.Provider value={value}>
     {children}
   </UserContext.Provider>;
 };

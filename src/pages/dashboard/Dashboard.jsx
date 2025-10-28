@@ -1,17 +1,20 @@
 import React, { useEffect, useState, useMemo } from "react";
 import Layout from "../../layout/Layout";
 import apiCaller from "/src/utils/apiCaller";
+import { useUser } from "../../hooks/UserContext";
 
 const Dashboard = () => {
   const [stats, setStats] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  const USER_ID = 1; 
+  const {user} = useUser();
   // --- Data Fetching ---
-  const fetchDashboardData = async () => {
+  
+
+  useEffect(() => {
+    const fetchDashboardData = async () => {
     setIsLoading(true);
     try {
-      const response = await apiCaller(`/getDashboardData?userId=${USER_ID}`);
+      const response = await apiCaller(`/getDashboardData?userId=${user.id}`);
       if (response.status === "Success") {
         setStats(response.data);
       } else {
@@ -24,11 +27,11 @@ const Dashboard = () => {
       setIsLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchDashboardData();
-  }, []);
-
+    if(user && user.id){
+      fetchDashboardData();
+    }
+  }, [user.id]);
+  console.log("rerendering dashboard");
   if (isLoading) {
     return (
       <Layout>
